@@ -6,6 +6,7 @@ app.use(express.json())
 const notes = []
 
 
+// post method is used to add the data in the array.
 app.post("/notes", (req, res) => {
     notes.push(req.body);
 
@@ -15,6 +16,7 @@ app.post("/notes", (req, res) => {
 });
 
 
+// get methon is used to get the existing data in the array.
 app.get('/notes', (req, res) => {
     res.status(200).json({
         message: "notes fetched successfully",
@@ -23,6 +25,7 @@ app.get('/notes', (req, res) => {
 })
 
 
+// delete method is used to delete the existing data in the array.
 app.delete('/notes/:index', (req, res) => {
     const index = req.params.index
 
@@ -34,6 +37,7 @@ app.delete('/notes/:index', (req, res) => {
 })
 
 
+// patch method is used to update the existing data in the array.
 app.patch('/notes/:index', (req, res) => {
     
     const index = req.params.index
