@@ -1,8 +1,9 @@
 const express = require('express');
 
 const app = express();
-app.use(express.json())
 
+app.use(express.json())
+    
 const notes = []
 
 
@@ -16,7 +17,7 @@ app.post("/notes", (req, res) => {
 });
 
 
-// get methon is used to get the existing data in the array.
+// get method is used to get the existing data in the array.
 app.get('/notes', (req, res) => {
     res.status(200).json({
         message: "notes fetched successfully",
