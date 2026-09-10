@@ -7,6 +7,7 @@ app.use(express.json())
 const notes = []
 
 
+
 // post method is used to add the data in the array.
 app.post("/notes", (req, res) => {
     notes.push(req.body);
