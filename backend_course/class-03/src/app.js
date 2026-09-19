@@ -30,11 +30,9 @@ app.get('/notes', async (req, res) => {
 
 
 app.delete('/notes/:id', async (req, res) => {
-    const indexId = req.params.id;
+    const id = req.params.id;
 
-    const { description } = req.body;
-
-    await noteModel.findOneAndDelete({ _id: id }, { description: description })
+    await noteModel.findByIdAndDelete({ _id: id })
 
     res.status(200).json({
         message: "note delete successfully"
@@ -43,12 +41,12 @@ app.delete('/notes/:id', async (req, res) => {
 
 
 app.patch('/notes/:id', async (req, res) => {
-    const indexId = req.params.id;
+    const id = req.params.id;
     const {  description } = req.body;
 
     await noteModel.findOneAndUpdate(
         {
-            _id: indexId
+            _id: id
         },
         {
             description: description
