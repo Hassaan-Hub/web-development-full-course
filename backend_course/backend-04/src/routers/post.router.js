@@ -11,7 +11,6 @@ postRouter.post('/create', async (req, res) => {
             message: "Unauthorized"
         })
     }
-
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
         
@@ -31,7 +30,7 @@ postRouter.post('/create', async (req, res) => {
         message: "create post",
         cookies: req.cookies
     })
-})
+});
 
 
 module.exports = postRouter;
