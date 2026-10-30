@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { generateText } from "@/app/actions/aiActions";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function Home() {
   const [prompt, setPrompt] = useState<string>("");
@@ -18,7 +19,7 @@ export default function Home() {
       {
         output && (
           <div className="output-area w-full h-[90%] overflow-y-auto px-24 py-4">
-            <p className="text-lg">{output}</p>
+            <ReactMarkdown>{output}</ReactMarkdown>
           </div>
         )
       }
